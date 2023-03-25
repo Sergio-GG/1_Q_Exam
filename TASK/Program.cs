@@ -6,7 +6,7 @@
 
 
 
-string[] CreateArray(int size)
+string[] CreateArray(int size) //Создаем массив, его длина вводится с клавиатуры (size).
 {
     string[] array = new string[size];
     for (int i = 0; i < size; i++)
@@ -18,7 +18,7 @@ string[] CreateArray(int size)
     return array;
 }
 
-int Counter (string[] array)
+int Counter (string[] array) //Считаем количество слов с длиной, меньшей 4 символов
 {
     int counter = 0;
     for (int i = 0; i < array.Length; i++)
@@ -28,10 +28,10 @@ int Counter (string[] array)
     return counter;
 }
 
-string[] ArrayOfPassedWords(string[] array, int newSize)
-{
-    int index = 0;
-    string[] newArray = new string[newSize];
+string[] ArrayOfPassedWords(string[] array, int newSize) // Создаем новый массив с длиной, равной значению, 
+{                                                        // полученному в методе Counter
+    int index = 0;                                       // Создаем счетчик индексов нового массива (index). 
+    string[] newArray = new string[newSize];             // Он будет увеличиваться на единицу, если условие выполнится.
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3) 
@@ -43,7 +43,7 @@ string[] ArrayOfPassedWords(string[] array, int newSize)
     return newArray;
 }
     
-void PrintStringArray(string[] array)
+void PrintStringArray(string[] array) // Этот метод выводит массив на экран (первый и второй массивы).
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
